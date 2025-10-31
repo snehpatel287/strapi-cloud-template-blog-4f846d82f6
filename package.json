@@ -4,10 +4,10 @@
   "private": true,
   "description": "A Strapi application",
   "scripts": {
-    "build": "NODE_OPTIONS=\"--max_old_space_size=8192\" strapi build",
+    "build": "cross-env NODE_OPTIONS=--max_old_space_size=8192 strapi build",
     "deploy": "strapi deploy",
-    "develop": "strapi develop",
-    "start": "NODE_OPTIONS=\"--max_old_space_size=8192\" strapi start",
+    "develop": "cross-env NODE_OPTIONS=--max_old_space_size=8192 strapi develop",
+    "start": "cross-env NODE_OPTIONS=--max_old_space_size=8192 strapi start",
     "strapi": "strapi"
   },
   "dependencies": {
@@ -26,5 +26,8 @@
   "engines": {
     "node": ">=18.0.0 <=22.x.x",
     "npm": ">=6.0.0"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3"
   }
 }
